@@ -25,6 +25,7 @@
   - [Why am I seeing “Please tell me who you are” when trying to commit to git?](#q-why-am-i-seeing-please-tell-me-who-you-are-when-trying-to-commit-to-git)
   - [Where is the link to clone the repository on GitHub? The page looks different than what is shown in the video.](#q-where-is-the-link-to-clone-the-repository-on-github-the-page-looks-different-than-what-is-shown-in-the-video)
   - [Where is the “Launch automatic page generator” button? The page looks different than what is shown in the video.](#q-where-is-the-launch-automatic-page-generator-button-the-page-looks-different-than-what-is-shown-in-the-video)
+  - [Where is the `gh-pages` branch?](#q-where-is-the-gh-pages-branch)
 
 ## HTML, CSS, and JavaScript
   - [My CSS is not loading for my web page, what is wrong?](#q--my-css-is-not-loading-for-my-web-page-what-is-wrong)
@@ -202,6 +203,8 @@ A: One reason this may not work is because the file has not yet been saved with 
 
 Once either of the above two methods have been completed, you will be able to type 'html', followed by `ctrl+space` on the keyboard, to generate a basic HTML template document.
 
+Another reason is that you may have multiple input sources enabled (e.g. because you type in a non-English language).  On a Mac, the default keyboard shortcut for switching input sources is `ctrl+space` which conflicts with the Sublime Text shortcut.  You can fix this by mapping the Sublime shortcut to something else, like `alt+space`, using [these instructions](https://forum.sublimetext.com/t/solved-ctrl-space-doesnt-complete/7246/4).
+
 #### **Q: How do I edit multiple lines at the same time in Sublime Text?**
 A: In Microsoft Windows, hold down the **`ctrl`** key on the keyboard while performing a select as you typically do (left mouse button down while moving the mouse over the text you want to select, and then releasing the left mouse button).  Be sure to keep **`ctrl`** down and you can move to another spot within the text and repeat the step with the mouse to select yet another section of text.
 
@@ -304,24 +307,36 @@ Click that green button and you'll have a choice to either download all of the c
 ![Select cope of clone location](images/GitHubCopyCloneLink.png)
 
 #### **Q: Where is the “Launch automatic page generator” button? The page looks different than what is shown in the video.**
-A: Yes, GitHub has changed the way how GitHub Pages are created. They have removed the "Launch automatic page generator" button. Instead, they allow you to host your pages in the branch of your choice.
+A: Yes, GitHub has changed the way how GitHub Pages are created. They have removed the "Launch automatic page generator" button. Instead, they allow you to host your pages from `master` (or now `main`), or a `/docs` folder on your `master` (or now called `main`) branch.
 
-This is what you will see when you go to the Settings page of your repo.
-![GitHub Pages Settings](images/GitHubPagesSettings.png)
+This is what you will see when you go to the **Settings** page of your repo.
+![GitHub Pages Settings](https://user-images.githubusercontent.com/4999744/145314321-d97ee6d2-adf1-46c5-bfee-2ade5203cbf7.png)
 
-To make things easier, you can host your code in the `master` branch, as opposed to the `gh-pages` branch used in the lecture video. To do this, use the **Select source** drop-down menu to select **master branch** as your GitHub Pages publishing source. Don't forget to click on the **Save** button.
-![GitHub Pages Branch](images/GitHubPagesMasterBranch.png)
 
-Note that because GitHub now doesn't generate a template site for you, if you go to
+Since now GitHub does not generate a `gh-pages` branch by default (see here: [Where is the `gh-pages` branch?](#q-where-is-the-gh-pages-branch)), to make things easier we suggest you simply host your code in the `master` (or now called `main`) branch.
 
-http://yourgihubid.github.io/repository-name/ (replace 'yourgithubid' with your unique GitHub ID and 'repository-name' with the one you chose to use for the repo)
+To do this, click **Pages** on the left hand side, select `main` branch as your GitHub Pages publishing source. Don't forget to click on the **Save** button.
+![GitHub Pages Settings](https://user-images.githubusercontent.com/4999744/145314353-6834452a-0318-4a27-a6f1-1cf4cbad8f50.png)
 
-you will get a 404 not-found error.
 
-However, you can continue to follow the lecture to create a **site** folder (or whatever you wish to call it: **module2-solution**, **module3-solution**, etc.) inside your repo and place your code files in that folder. Then, you can access your repo using this URL:
+Note that it will only allow you to choose a branch if you already have some content in your repo. If you don't, you'll have to get something in there first. However, if, when you create the repo, you choose "Add a README file", that's already enough.
+
+Skip the **Choose a theme**
+
+Note that now you should be able to go to http://yourgihubid.github.io/repository-name/ (replace 'yourgithubid' with your unique GitHub ID and 'repository-name' with the one you chose to use for the repo) and see the README file that's in the root of your repository.
+
+
+Now you can continue to follow the lecture to create a **site** folder (or whatever you wish to call it: **module2-solution**, **module3-solution**, etc.) inside your repo and place your code files in that folder. Then, you can access that 'site' using this URL:
 
 http://yourgihubid.github.io/repository-name/site/index.html.
 
+#### **Q: Where is the `gh-pages` branch?**
+A: Since the lecture was recorded, GitHub has changed the way how GitHub Pages are published. Now, by default, GitHub does not generate a `gh-pages` branch for you.
+
+To make things easier, we suggest you ignore the `gh-pages` branch introduced in the lecture (no need to do `git checkout gh-pages`) and simply stick with the `master` (or now `main`) branch (if you are already in another branch, do a `git checkout master` or `git checkout main`).
+
+You may also find this answer helpful: [Where is the “Launch automatic page generator” button? The page looks different than what is shown in the video.](#q-where-is-the-launch-automatic-page-generator-button-the-page-looks-different-than-what-is-shown-in-the-video)
+                                        
 ----------
 
 
